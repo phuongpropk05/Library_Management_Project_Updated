@@ -16,7 +16,6 @@ public:
 	~Menu();
 	void setName(string name);
 	void setDescription(string description);
-	//void setSubMenu(vector<Menu> subMenu);
 	void setAction(int action);
 	string getName();
 	string getDescription();

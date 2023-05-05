@@ -131,7 +131,6 @@ void RegisterUser::read(Book* b)
 	if (b->getAvailabilityStatus())
 	{
 		cout << "You are reading whole the book " << b->getTitle() << " by " << b->getAuthor() << endl;
-		/*b.setAvailabilityStatus(false);*/
 	}
 	else
 	{

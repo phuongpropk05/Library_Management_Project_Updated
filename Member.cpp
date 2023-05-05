@@ -148,6 +148,17 @@ void Member::displayBorrowList()
 	}
 }
 
+bool Member::isSubcribe(Collection* c, Library* l)
+{
+	bool check = false;
+	for (int i = 0; i < subscribedCollections.size(); i++) {
+		if (c == subscribedCollections[i]) {
+			check = true;
+		}
+	}
+	return check;
+}
+
 
 
 

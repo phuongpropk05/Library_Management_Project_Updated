@@ -32,6 +32,7 @@ public:
     int getBorrowNumber();
     void displayCollectionList(bool onlySubscribed);
     void displayBorrowList();
+    bool isSubcribe(Collection* c, Library* l);
 };
 
 #endif

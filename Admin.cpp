@@ -140,13 +140,12 @@ void Admin::edit(Book* b, Library* l)
     cout << b->getTitle() << " has edited succesfully!\n";
 }
 
-void Admin::createCollection(string name, Library* l)
+Collection* Admin::createCollection(string name, Library* l)
 {
     char choice, more;
     string titles;
     Book* tmp = nullptr;
     Collection* collection = new Collection(name);
-    l->addCollection(collection);
     cout << collection->getName() << " has created succesfully!\n";
     cout << "Do you want to add some books?(y/n): ";
     cin >> choice;
@@ -167,6 +166,7 @@ void Admin::createCollection(string name, Library* l)
             cin >> more;
         } while (more == 'y' || more == 'Y');
     }
+    return collection;
 }
 
 void Admin::deleteCollection(string name, Library* l)
@@ -189,21 +189,22 @@ void Admin::deleteCollection(string name, Library* l)
         }
         l->changeListCollection(newCollection);
         cout << c->getName() << " has deleted succesfully!\n";
+        delete c;
     }
     else {
         cout << name << " colletion doesn't exist" << endl;
     }
 }
 
-
-//void Admin::deleteCollection(Collection* collection, Library* l)
-//{
-//    Library* l = new Library();
-//    for (auto it = l->getListCollection().begin(); it != l->getListCollection().end(); ++it) {
-//        if (*it == collection) {
-//            l->getListCollection().erase(it);
-//            break;
-//        }
-//    }
-//    delete collection;
-//}
+Collection* Admin::searchCollection(string name, Library* l)
+{
+    Collection* c;
+    Collection* tmp = NULL;
+    for (int i = 0; i < l->getListCollectionSize(); i++) {
+        c = l->getCollection(i);
+        if (c->getName() == name) {
+            tmp = c;
+        }
+    }
+    return tmp;
+}

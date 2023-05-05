@@ -12,10 +12,7 @@ class Library;
 class User {
 public:
 	User();
-	//User(accessibilityType level);
 	~User();
-	/*void setAccessLevel(accessibilityType level);
-	int getAccessLevel();*/
 	virtual void read(Book* b) = 0;
 	Book* searchByTitle(string title, Library* l);
 	Book* searchBySerial(string serialNumber, Library* l);

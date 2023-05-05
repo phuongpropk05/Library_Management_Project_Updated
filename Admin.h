@@ -22,9 +22,9 @@ public:
 	void hide(Book* b, Library* l);
 	void remove(Book* b, Library *l);
 	void edit(Book* b, Library* l);
-	void createCollection(string name, Library* l);
+	Collection* createCollection(string name, Library* l);
 	void deleteCollection(string name, Library* l);
-	//void deleteCollection(Collection* c);
+	Collection* searchCollection(string name, Library* l);
 };
 
 #endif

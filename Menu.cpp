@@ -85,7 +85,6 @@ int Menu::promtOption()
 		try {
 			if (cin.fail()) {
 				throw "Invalid input";
-				//cin.ignore();
 			}
 			else if (option < 1 || option > subMenu.size()) {
 				throw "Menu out of range";
@@ -95,7 +94,6 @@ int Menu::promtOption()
 			}
 		}
 		catch (const char* error) {
-			//cin.ignore();
 			cin.clear();
 			cout << "Error: " << error << endl;
 		}

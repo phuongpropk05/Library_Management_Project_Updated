@@ -3,11 +3,6 @@
 #include "Library.h"
 using namespace std;
 
-//vector<Collection*> Library::listCollection;
-//vector<Book*> Library::listBook;
-//vector<Member*> Library::memberList;
-//vector<Admin*> Library::adminList;
-
 Library::Library()
 {
 	listBook.clear();
@@ -134,7 +129,7 @@ Book* Library::getBook(int index)
 
 Collection* Library::getCollection(int index)
 {
-	if (index >= 0 && index <= listCollection.size()) {
+	if (index >= 0 && index <= getListCollectionSize()) {
 		return listCollection[index];
 	}
 	else {
